@@ -1,31 +1,31 @@
 def solution(msg):
     ans = []
-    dictionary = {}
+    dict = {}
     
     for i in range(1, 27):
-        dictionary[chr(i + 64)] = i
+        dict[chr(i+64)] = i
     
-    last = 26  
+    last = 26
     
-    i = 0  
+    i = 0
     
     while i < len(msg):
         
-        j = i + 1
-        while j <= len(msg) and msg[i:j] in dictionary:
+        j = i+1
+        
+        while j <= len(msg) and msg[i:j] in dict:
             j += 1
         
         current_prefix = msg[i:j-1]
+        ans.append(dict[current_prefix])
         
-
-        ans.append(dictionary[current_prefix])
         
-    
-        if j <= len(msg):
-            new_entry = msg[i:j]
-            last += 1
-            dictionary[new_entry] = last
+        dict[msg[i:j]] = last+1
+        last+=1
+        
         
         i += len(current_prefix)
+        
     
     return ans
+        
