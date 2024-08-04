@@ -1,36 +1,47 @@
+# 무인도 dp table 만들어서 방문지점 메모하고 dfs 하면 될듯? 
+
 def solution(maps):
+    
     answer = []
     
     row = len(maps)
     col = len(maps[0])
     
-    dp = [[False]*col for _ in range(row)]
+    dp = [[False]*col for i in range(row)]
     
-    direction = [(1,0), (-1,0), (0,1), (0,-1)]
+    direction = [(1,0),(-1,0),(0,1),(0,-1)]
     
-    def search(m, n):
-        stack = [(m, n)]
-        total = 0
+    # m, n이 좌표로 들어간다고 하면~
+
+    def search(m,n):
+         
+        stack = [(m,n)]
+        cache = 0
         
         while stack:
-            x, y = stack.pop()
-            if x < 0 or y < 0 or x >= row or y >= col or dp[x][y] or maps[x][y] == 'X':
+            m,n = stack.pop()
+            
+            if (m < 0) or (n < 0) or (m > row-1) or (n > col-1) or (dp[m][n] == True) or (maps[m][n] == 'X'):
                 continue
-            
-            dp[x][y] = True
-            total += int(maps[x][y])
-            
-            for dx, dy in direction:
-                stack.append((x + dx, y + dy))
+
+
+            cache += int(maps[m][n])
+            dp[m][n] = True
+
+            for i in range(4):
+                x,y = direction[i]
+                stack.append((m+x, n+y))
+
+        return cache
         
-        return total
-    
+        
     for i in range(row):
         for j in range(col):
-            if not dp[i][j] and maps[i][j] != 'X':
-                island_value = search(i, j)
-                if island_value > 0:
-                    answer.append(island_value)
+            if dp[i][j] == False:
+                cache1 = 0
+                cache1 += search(i,j)
+                if cache1 != 0:
+                    answer.append(cache1)
     
     if len(answer) == 0:
         return [-1]
