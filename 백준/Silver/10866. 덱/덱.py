@@ -1,9 +1,12 @@
 from collections import deque
+import sys
 
+input = sys.stdin.read  # 한꺼번에 다 읽어 오는거라...
 
 # 입력 받기
-n = int(input())  
-commands = [input() for i in range(n)] 
+data = input().splitlines()
+n = int(data[0])  # 첫 번째 줄: 명령의 개수
+commands = data[1:]  # 나머지 줄: 명령어들
 
 que = deque()
 
@@ -14,7 +17,7 @@ for command in commands:
         que.append(int(cmd[1]))
     
     elif cmd[0] == 'push_front':
-        que.appendleft(int(cmd[1]))  # deque의 appendleft 사용
+        que.insert(0, int(cmd[1]))
     
     elif cmd[0] == 'pop_front':
         print(que.popleft() if que else -1)
