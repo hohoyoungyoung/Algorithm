@@ -17,7 +17,7 @@ for command in commands:
         que.append(int(cmd[1]))
     
     elif cmd[0] == 'push_front':
-        que.insert(0, int(cmd[1]))
+        que.appendleft(int(cmd[1]))    # deque() insert(0, int(cmd[1])) 도 된다!!
     
     elif cmd[0] == 'pop_front':
         print(que.popleft() if que else -1)
