@@ -1,13 +1,14 @@
-def is_prime(n):
-    if n < 2:
-        return False
-    for i in range(2, int(n**0.5) + 1):  # sqrt(n)까지만 검사
-        if n % i == 0:
-            return False
-    return True
+def sieve_of_eratosthenes(a, b):
+    sieve = [True] * (b + 1)
+    sieve[0] = sieve[1] = False  
+    
+    for i in range(2, int(b**0.5) + 1):
+        if sieve[i]:
+            for j in range(i * i, b + 1, i):
+                sieve[j] = False
+    
+    return [x for x in range(a, b + 1) if sieve[x]]
 
 a, b = map(int, input().split())
-
-for i in range(a, b+1):
-    if is_prime(i):
-        print(i)
+primes = sieve_of_eratosthenes(a, b)
+print('\n'.join(map(str, primes)))  
