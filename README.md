@@ -7,6 +7,7 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 |  |
 | ------- |
 | [0001-two-sum](https://github.com/hohoyoungyoung/Algorithm/tree/master/0001-two-sum) |
+| [0015-3sum](https://github.com/hohoyoungyoung/Algorithm/tree/master/0015-3sum) |
 | [0042-trapping-rain-water](https://github.com/hohoyoungyoung/Algorithm/tree/master/0042-trapping-rain-water) |
 ## Hash Table
 |  |
@@ -15,6 +16,7 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 ## Two Pointers
 |  |
 | ------- |
+| [0015-3sum](https://github.com/hohoyoungyoung/Algorithm/tree/master/0015-3sum) |
 | [0042-trapping-rain-water](https://github.com/hohoyoungyoung/Algorithm/tree/master/0042-trapping-rain-water) |
 ## Dynamic Programming
 |  |
@@ -28,4 +30,8 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 |  |
 | ------- |
 | [0042-trapping-rain-water](https://github.com/hohoyoungyoung/Algorithm/tree/master/0042-trapping-rain-water) |
+## Sorting
+|  |
+| ------- |
+| [0015-3sum](https://github.com/hohoyoungyoung/Algorithm/tree/master/0015-3sum) |
 <!---LeetCode Topics End-->
