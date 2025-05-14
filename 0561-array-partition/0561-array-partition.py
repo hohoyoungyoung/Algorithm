@@ -10,7 +10,13 @@ class Solution(object):
 
         ans = 0
         
-        for i in range(2, len(nums)+1, 2):
-            ans += min(nums[i-2:i])
+        i = 0
+        j = 1
+
+        while j <= len(nums):
+            ans += min(nums[i], nums[j])
+
+            i += 2
+            j += 2
 
         return ans 
