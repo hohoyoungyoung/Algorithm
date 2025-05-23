@@ -10,6 +10,7 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 | [0011-container-with-most-water](https://github.com/hohoyoungyoung/Algorithm/tree/master/0011-container-with-most-water) |
 | [0015-3sum](https://github.com/hohoyoungyoung/Algorithm/tree/master/0015-3sum) |
 | [0042-trapping-rain-water](https://github.com/hohoyoungyoung/Algorithm/tree/master/0042-trapping-rain-water) |
+| [0238-product-of-array-except-self](https://github.com/hohoyoungyoung/Algorithm/tree/master/0238-product-of-array-except-self) |
 | [0561-array-partition](https://github.com/hohoyoungyoung/Algorithm/tree/master/0561-array-partition) |
 ## Hash Table
 |  |
@@ -47,4 +48,8 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 |  |
 | ------- |
 | [0561-array-partition](https://github.com/hohoyoungyoung/Algorithm/tree/master/0561-array-partition) |
+## Prefix Sum
+|  |
+| ------- |
+| [0238-product-of-array-except-self](https://github.com/hohoyoungyoung/Algorithm/tree/master/0238-product-of-array-except-self) |
 <!---LeetCode Topics End-->
