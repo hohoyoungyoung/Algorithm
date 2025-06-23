@@ -1,23 +1,13 @@
-N, M = map(int, input().split(' '))
+N, M = map(int, input().split())
 
-def backtrack(seq, visited):
+def backtrack(seq):
     if len(seq) == M:
         print(' '.join(map(str, seq)))
         return
 
-    for i in range(1, N+1):
-    
-        if (not visited[i]) and (not seq or seq[-1] < i):
+    start = seq[-1] + 1 if seq else 1  # seq가 비었으면 1부터 시작
 
-            seq.append(i)
-            visited[i] = True
+    for i in range(start, N + 1):
+        backtrack(seq + [i])  # 새 리스트로 넘겨주기 (불변성 유지)
 
-            backtrack(seq, visited)
-
-            seq.pop()
-            visited[i] = False
-
-
-visited = [False] * (N+1)
-
-backtrack([], visited)
+backtrack([])
