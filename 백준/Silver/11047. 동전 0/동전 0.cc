@@ -6,13 +6,13 @@ int main() {
     cin.tie(nullptr);
 
     int N;
-    long long K;
+    int K;
     cin >> N >> K;
 
-    vector<long long> a(N);
+    vector<int> a(N);
     for (int i=0; i<N; i++) cin >> a[i];
 
-    long long ans = 0;
+    int ans = 0;
     for (int i=N-1; i>=0 && K>0; i--) {
         if (a[i] <= K) {
             ans += K / a[i];
