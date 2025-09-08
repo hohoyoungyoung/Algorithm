@@ -1,24 +1,32 @@
-#include <iostream>
 #include <vector>
+#include <iostream>
+#include <utility>
 #include <algorithm>
 
 using namespace std;
 
 int main() {
     int N, K;
+
     cin >> N >> K;
+    vector<int> dp(K+1,0);
+    vector<pair<int,int>> store(N,{0,0});
 
-    vector<long long> dp(K + 1, 0);  // 무게별 최대 가치 저장
-    int weight, value;
-
-    for (int i = 0; i < N; i++) {
-        cin >> weight >> value;
-
-        for (int j = K; j >= weight; j--) {
-            dp[j] = max(dp[j], dp[j - weight] + value);
-        }
+    for (int i=0; i<N; i++) {
+        int a, b;
+        cin >> a >> b;
+        store[i] = {a, b};
     }
 
-    cout << dp[K] << '\n';
-    return 0;
+    sort(store.begin(), store.end());
+
+    for (auto check: store) {
+        int w = check.first; //무게
+        int v = check.second; //가치
+
+        for (int i=K; i>=w; i--) {
+            dp[i] = max(dp[i-w] + v, dp[i]);
+        }
+    }
+    cout << dp[K];
 }
