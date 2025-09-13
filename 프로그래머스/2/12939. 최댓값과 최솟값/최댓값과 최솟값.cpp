@@ -1,19 +1,21 @@
 #include <string>
-#include <sstream>
-#include <limits>
-#include <algorithm>
-
+#include <vector>
+#include <climits>
 using namespace std;
 
 string solution(string s) {
-    stringstream ss(s);
-    int num;
-    int minVal = numeric_limits<int>::max();
-    int maxVal = numeric_limits<int>::min();
+    string sTemp = "";
+    int minVal = INT_MAX, maxVal = INT_MIN;
 
-    while (ss >> num) {
-        minVal = min(minVal, num);
-        maxVal = max(maxVal, num);
+    for (int i = 0; i <= s.size(); i++) {
+        if (i == s.size() || s[i] == ' ') {
+            int num = stoi(sTemp);
+            minVal = min(minVal, num);
+            maxVal = max(maxVal, num);
+            sTemp.clear();
+        } else {
+            sTemp += s[i];
+        }
     }
 
     return to_string(minVal) + " " + to_string(maxVal);
