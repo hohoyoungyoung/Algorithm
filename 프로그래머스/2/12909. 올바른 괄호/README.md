@@ -1,10 +1,10 @@
 # [level 2] 올바른 괄호 - 12909 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/12909) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/12909?language=cpp) 
 
 ### 성능 요약
 
-메모리: 10.5 MB, 시간: 12.36 ms
+메모리: 3.8 MB, 시간: 0.12 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 07월 09일 21:33:29
+2025년 09월 13일 17:19:54
 
 ### 문제 설명
 
