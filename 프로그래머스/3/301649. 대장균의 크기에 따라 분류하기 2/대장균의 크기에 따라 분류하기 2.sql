@@ -1,0 +1,19 @@
+-- 코드를 작성해주세요
+
+WITH ranked AS (
+    SELECT 
+        ID,
+        ROW_NUMBER() OVER (ORDER BY SIZE_OF_COLONY DESC) AS RN,
+        COUNT(*) OVER () AS TOTAL
+    FROM ECOLI_DATA
+)
+SELECT 
+    ID,
+    CASE 
+        WHEN RN <= TOTAL*0.25 THEN 'CRITICAL'
+        WHEN RN <= TOTAL*0.50 THEN 'HIGH'
+        WHEN RN <= TOTAL*0.75 THEN 'MEDIUM'
+        ELSE 'LOW'
+    END AS COLONY_NAME
+FROM ranked
+ORDER BY ID ASC;
